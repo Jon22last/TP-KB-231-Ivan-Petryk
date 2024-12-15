@@ -1,14 +1,14 @@
 #calculator5.py - об’єднує функціонал з інших модулів
-# calculator.py
-from math import add, subtract, multiply, divide
+from mathe import add, subtract, multiply, divide
 from validation import validate_number, validate_operator
 
 def main():
     print("Вітаю у програмі 'Калькулятор'!")
+    
     while True:
         try:
-            num1 = input("Введіть перше число (або 'q' для виходу): ")
-            if num1.lower() == 'q':
+            num1 = input("Введіть перше число (або 'ex' для виходу): ")
+            if num1.lower() == 'ex':
                 print("До побачення!")
                 break
             num1 = validate_number(num1)
@@ -31,10 +31,10 @@ def main():
                 case _:
                     raise ValueError("Невідомий оператор!")
 
+
             print(f"Результат: {result}")
 
         except ValueError as e:
-            print(e)
+            print(f"Помилка: {e}")
 
-if __name__ == "__main__":
-    main()
+main()

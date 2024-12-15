@@ -15,7 +15,6 @@ def fetch_exchange_rates(url):
         return {}
 
 def convert_currency(amount, from_currency, to_currency, rates):
-    """Конвертує валюту з однієї в іншу."""
     try:
         if from_currency == "UAH":
             converted = amount / rates[to_currency]
@@ -41,12 +40,10 @@ def main():
     
     while True:
         try:
-            #Введення даних користувачем
             amount = float(input("Введіть суму для конвертації: "))
             from_currency = input("Введіть валюту, з якої конвертуємо (наприклад, USD): ").upper()
             to_currency = input("Введіть валюту, в яку конвертуємо (наприклад, EUR): ").upper()
 
-            #Конвертація
             result = convert_currency(amount, from_currency, to_currency, rates)
             print(f"{amount} {from_currency} = {result:.2f} {to_currency}")
 
@@ -58,5 +55,4 @@ def main():
             print("Дякуємо за використання конвертора валют!")
             break
 
-if __name__ == "__main__":
-    main()
+main()

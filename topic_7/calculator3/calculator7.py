@@ -7,7 +7,6 @@ from operations import add, subtract, multiply, divide
 file_path = os.path.join(os.path.dirname(__file__), "Calc_Log.txt")
 
 def log_operation(a, b, operation, result):
-    """Логування операції у файл."""
     with open(file_path, "a") as file:
         log_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         file.write(f"{log_time} | {a} {operation} {b} = {result}\n")
@@ -44,5 +43,5 @@ def calculator():
         except ValueError as e:
             print(f"Помилка: {e}")
 
-if __name__ == "__main__":
-    calculator()
+#Запуск функції калькулятора
+calculator()

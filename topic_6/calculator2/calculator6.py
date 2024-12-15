@@ -40,5 +40,5 @@ def calculation(a):
             else:
                 file.write(f"{log_time} | {a_old} {act} {b} = {a}\n")
 
-if __name__ == "__main__":
-    calculation(enter())
+# Запуск функції калькулятора
+calculation(enter())
